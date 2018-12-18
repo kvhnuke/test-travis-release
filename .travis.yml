@@ -11,6 +11,7 @@ before_deploy:
 deploy:
   provider: script
   script: bash ./release.sh $TRAVIS_TAG $GITHUB_TOKEN "kvhnuke/test-travis-release" true
+  skip_cleanup: true
   on:
     tags: true
     branch: master
