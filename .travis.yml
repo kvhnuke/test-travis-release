@@ -1,0 +1,12 @@
+language: minimal
+sudo: required
+dist: trusty
+env:
+  global:
+    secure: bjt/vf5DAQguKyTReF9zaMmnyNLzv2eDpED5FkuYAPKe+EkeQXFT+xRKovMb6ZE4G1w2+tiHPKyNP6Q60aaxQrt4OL8ELxXloTh7YDmDGl00NE6euv0WFevcYcFOFz/NpSplI83V5q32cOwfbWo5PV19U4XLZ/8RLXRo4Y77GgTDCG/2aCr6hFo6XwwDwhVIxe1G3J6puM8/xFjEHC5hZ1g29o63O1vpr+daIRV9B6Zg9u55hDyDD4SA0B/UHr8bz6JqKVnJX2Phjh8X++JFSnICj/5In4hg9yQ9eCzZuJewnSzPKqFvCsyokR1TUhgSNgHC3ochbLYWE/dnFgpwdOJZHCOilNsmglH2bjW1Sq+KmbShJt/mK1g0EtSnHPOKZKzJ0IdLb1Yg4aLHy/BFzNUO509mZNiQ80OOwDT3hmv3uc58trMyi8TVvrLvv2Zt8CzahsviRfdtIjaMijwmYu7bxxjTX+9hopxleLsWE7MmNZkOkSKoTVNt6mIwIVoHk6UqSNJm3bX0Y/q1NPBFKDdvPDA14PD/iiUrcdxRvinlcygXpufOpulm5Ts3vb2gM1cz+/c1CB6IOj7L8toGe6ezMYV/jELARhJXZNYh57yeTK2Anil8eNnwD6ZpFonJdzc1MoI7oEo5bjXMIFspHR9u36DRd9C0q9mhjF/DP7c=
+deploy:
+  provider: script
+  script: bash ./release.sh $TRAVIS_TAG $GITHUB_TOKEN
+  on:
+    tags: true
+    branch: master
