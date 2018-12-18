@@ -6,8 +6,6 @@ CHANGELOG=`awk -v version="$RELEASE" '/### Release / {printit = $3 == version}; 
 mkdir release
 cd dist && zip -r ../release/MyEtherWallet-$RELEASE.zip * && cd ..
 if [ -n "$4" ]; then
-    openssl aes-256-cbc -K $encrypted_3dff2b523c00_key -iv $encrypted_3dff2b523c00_iv -in mew_sec.gpg.enc -out mew.gpg -d
-    gpg --allow-secret-key-import --import mew.gpg
     for f in release/*; do
       gpg --output $f.sig --detach-sig $f
     done
